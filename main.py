@@ -30,13 +30,16 @@ def main():
     heading1 ="----------- Word Count ----------"
     word_cnt =f"Found {get_num_words(book_content)} total words"
     heading2 ="--------- Character Count -------"
-
     footer ="============= END ==============="
-    print(type(sorted_characters))
+    print(title)
+    print(analysis)
+    print(heading1)
+    print(word_cnt)
+    print(heading2)
     for entry in sorted_characters:
         if entry['char'].isalpha():
             print(f"{entry['char']}: {entry['num']}")
-
+    print(footer)
 
 def get_book_text(path_to_file):
     file_contents = ""
