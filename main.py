@@ -2,9 +2,12 @@ from stats import get_num_words, char_count, sorted_list
 import sys
 
 def main():
-    print(sys.argv)
-    _ , book_path = sys.argv
-    #book_path = "./books/frankenstein.txt"
+    #print(sys.argv)
+    try:
+        _ , book_path = sys.argv    
+    except Exception as e:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
     book_content = get_book_text(book_path)
     letter_dict = char_count(book_content)
     sorted_characters = {}
@@ -13,7 +16,7 @@ def main():
 
     # Now print the book report
     title ="============ BOOKBOT ============"
-    analysis =f"Analyzing book found at {book_path}..."
+    analysis =f"Analyzing book found at {book_path}"
     heading1 ="----------- Word Count ----------"
     word_cnt =f"Found {letter_num} total words"
     heading2 ="--------- Character Count -------"
@@ -32,6 +35,7 @@ def get_book_text(path_to_file):
     file_contents = ""
     with open(path_to_file) as f:
         file_contents = f.read()
+
     return file_contents
 
 
