@@ -20,7 +20,8 @@ def sorted_list(input):
     for character, number  in input.items():
         ls.append({"char": character, "num": number})
     ls.sort(key=sort_on, reverse=True) # We want the largest count to be first
-    print(ls)    
+    #print(ls)
+    return ls  
 
 #key sort helper functher
 def sort_on(item):
